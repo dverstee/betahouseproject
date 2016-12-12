@@ -12,13 +12,13 @@ conn = sqlite3.connect(sqlite_file)
 c = conn.cursor()
 #
 # Get all events that need to be triggered.
-c.execute('SELECT * FROM {tn} WHERE  lastsentdate > (julianday(date("now"))- julianday(frequency))'.\
+c.execute('SELECT * FROM {tn} WHERE  lastsentdate < (julianday(date("now"))- julianday(frequency))'.\
         format(tn=table_name))
 all_rows = c.fetchall()
 
 for row in all_rows:
         print row
-        #call(row[2])
+        call(row[2])
 
 c.execute('UPDATE {tn} set lastsentdate = date("now")'. \
           format(tn=table_name))

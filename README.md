@@ -1,3 +1,4 @@
 # betahouseproject
 
-This project is a project I made to steer a stepper motor in our house to automatically open the door of our house.
+This project contains the code for automatically opening the door of our house.
+The set-up containst the steering of a stepper motor based on a webserver we run locally on a raspberry pi.
